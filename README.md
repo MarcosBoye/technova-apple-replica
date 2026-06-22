@@ -1,0 +1,1 @@
+# technova-apple-replica
