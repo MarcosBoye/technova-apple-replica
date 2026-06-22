@@ -1,0 +1,476 @@
+/* ==========================================================================
+   RESET & CONFIGURACIÓN BASE
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #ffffff;
+    color: #1d1d1f;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   BARRA DE NAVEGACIÓN CENTRADA
+   ========================================================================== */
+.main-header {
+    background-color: rgba(22, 22, 23, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 44px;
+    z-index: 9999;
+}
+
+.nav-container {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 0 22px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-list {
+    display: flex;
+    flex-direction: row; 
+    list-style: none;
+    gap: 32px;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.nav-logo, .nav-search, .nav-list a {
+    color: #f5f5f7;
+    font-size: 12px;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: opacity 0.25s ease;
+}
+
+.nav-list a:hover, .nav-logo:hover, .nav-search:hover {
+    opacity: 1;
+}
+
+/* ==========================================================================
+   SECCIONES HERO (Banners de Ancho Completo)
+   ========================================================================== */
+.hero-section {
+    width: 100%;
+    padding-top: 44px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-section.event-bg {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.product-info {
+    padding: 35px 20px 20px 20px;
+    z-index: 10;
+}
+
+.product-info h1 {
+    font-size: 48px;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+}
+
+.product-info h2 {
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.product-info p {
+    font-size: 21px;
+    margin-top: 6px;
+    letter-spacing: -0.01em;
+}
+
+.event-text-sub {
+    color: #a1a1a6 !important;
+}
+
+.cta-links {
+    margin-top: 14px;
+    display: flex;
+    gap: 26px;
+    align-items: center;
+}
+
+.hero-section .cta-links {
+    justify-content: center;
+}
+
+/* --- BOTONES --- */
+.btn-capsule-blue {
+    background-color: #0071e3;
+    color: #ffffff !important;
+    padding: 8px 18px;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 20px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-capsule-white {
+    background-color: #ffffff;
+    color: #1d1d1f !important;
+    padding: 10px 22px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 20px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-link-blue {
+    color: #0071e3;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.btn-link-blue:hover {
+    text-decoration: underline;
+}
+
+.image-box {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.hero-section .image-box img {
+    max-height: 480px; 
+    width: 100%;
+    object-fit: contain;
+}
+
+.image-box.no-margin-bottom {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.image-box.no-margin-bottom img {
+    margin-bottom: 0 !important;
+    display: block;
+}
+
+/* Fondos globales */
+.dark-bg { background-color: #000000; color: #f5f5f7; }
+.light-bg { background-color: #fbfbfd; color: #1d1d1f; }
+.blue-bg { background-color: #f1f6fc; color: #1d1d1f; }
+.event-bg { background-color: #000000; color: #ffffff; }
+
+.dark-bg .product-info p { color: #f5f5f7; }
+.light-bg .product-info p, .blue-bg .product-info p { color: #6e6e73; }
+
+.border-top-separator {
+    border-top: 1px solid #d2d2d7;
+}
+
+/* ==========================================================================
+   BANNER PROMOCIONAL
+   ========================================================================== */
+.promo-banner-section {
+    width: 100%;
+    height: 480px;
+    background-image: url('../Images/promo-banner.png'); 
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #000000;
+    position: relative;
+    display: flex;
+    align-items: flex-end;    
+    justify-content: flex-start;
+    margin-top: 12px;
+}
+
+.promo-banner-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 40%, transparent 100%),
+                linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, transparent 40%);
+    z-index: 1;
+}
+
+.promo-overlay-content {
+    position: relative;
+    z-index: 2;               
+    padding: 0 0 50px 50px; 
+    max-width: 550px;
+    color: #ffffff;           
+    text-align: left;         
+}
+
+.promo-category {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #a1a1a6;
+    margin-bottom: 6px;
+}
+
+.promo-overlay-content h2 {
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.promo-description {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #d2d2d7;          
+    margin-bottom: 16px;
+}
+
+.carousel-dots-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 0 24px 0;
+    background-color: #ffffff;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background-color: #1d1d1f;
+    border-radius: 50%;
+    opacity: 0.3;
+    transition: opacity 0.2s ease;
+    cursor: pointer;
+}
+
+.dot.active {
+    opacity: 0.8;
+}
+
+/* ==========================================================================
+   CUADRÍCULA SECUNDARIA (CSS Grid de 2 Columnas)
+   ========================================================================== */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 12px;                             
+    padding: 12px;
+    background-color: #ffffff;
+}
+
+.grid-card {
+    height: 500px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center;
+    overflow: hidden;
+    padding-top: 50px;
+}
+
+.grid-card.blue-bg { background-color: #f1f6fc; color: #1d1d1f; }
+.grid-card.light-bg { background-color: #fbfbfd; color: #1d1d1f; }
+.grid-card.dark-bg { background-color: #000000; color: #f5f5f7; }
+
+.product-info-small {
+    text-align: center;
+    padding: 0 20px;
+}
+
+.product-info-small h3 { font-size: 28px; font-weight: 600; }
+.product-info-small p { font-size: 16px; margin-top: 4px; color: #6e6e73; }
+.grid-card.dark-bg .product-info-small p { color: #86868b; }
+
+.grid-image {
+    width: 100%;
+    height: 280px;
+    display: flex;
+    align-items: flex-end; 
+    justify-content: center;
+    margin-top: auto;
+}
+
+.grid-image img {
+    max-width: 85%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* ==========================================================================
+   FOOTER PREMIUM: NOTAS LEGALES Y COLUMNAS
+   ========================================================================== */
+.main-footer {
+    background-color: #f5f5f7;
+    padding: 30px 0 40px 0;
+    color: #6e6e73;
+    font-size: 12px;
+}
+
+.footer-inner-container {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 0 22px;
+    text-align: left;
+}
+
+.footer-legal-notes p {
+    font-size: 11px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    color: #86868b;
+}
+
+.footer-divider {
+    border: 0;
+    border-top: 1px solid #d2d2d7;
+    margin: 20px 0;
+}
+
+.footer-columns-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.footer-col h3 {
+    font-size: 12px;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 10px;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 8px;
+}
+
+.footer-col ul li a {
+    color: #6e6e73;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #1d1d1f;
+    text-decoration: underline;
+}
+
+/* Copyright y Enlaces Finales */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-top: 5px;
+    color: #86868b;
+}
+
+.footer-legal-links a {
+    color: #6e6e73;
+    text-decoration: none;
+    margin: 0 4px;
+}
+
+.footer-legal-links a:hover {
+    color: #1d1d1f;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESKTOP/MOBILE
+   ========================================================================== */
+@media (max-width: 768px) {
+    /* Ajuste de Navegación Móvil (Evita que desaparezca) */
+    .main-header {
+        height: auto;
+        padding: 8px 0;
+    }
+    .nav-container {
+        padding: 0 12px;
+    }
+    .nav-list {
+        display: flex;
+        flex-wrap: wrap; /* Envuelve los enlaces si no caben */
+        justify-content: center;
+        gap: 12px 16px;
+    }
+    .nav-list a {
+        font-size: 11px;
+    }
+
+    /* Ajustes de Contenido Hero y Grids */
+    .products-grid { 
+        grid-template-columns: 1fr; 
+        padding: 12px; 
+    }
+    .grid-card { 
+        height: 460px; 
+    }
+    .product-info h1 { 
+        font-size: 32px; 
+    }
+    .product-info h2 { 
+        font-size: 28px; 
+    }
+    
+    /* Ajustes Banner Promocional */
+    .promo-banner-section { 
+        height: 400px; 
+        background-position: right center; 
+    }
+    .promo-overlay-content { 
+        padding: 24px; 
+        max-width: 100%;
+    }
+    .promo-overlay-content h2 {
+        font-size: 28px;
+    }
+    
+    /* Footer adaptable */
+    .footer-columns-grid { 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 24px; 
+    }
+    .footer-bottom { 
+        flex-direction: column; 
+        align-items: center; 
+        text-align: center;
+    }
+}
